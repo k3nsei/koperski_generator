@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<title>Koperski Generator</title>
+
+    <!-- Font Lato from Google CDN -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+	<!-- jQuery compiled and minified CSS -->
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+	<!-- Bootstrap compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<!-- Bootstrap compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+	<!-- CreateJS compiled and minified JavaScript -->
+	<script src="./vendor/easeljs-0.8.0.min.js"></script>
+	<script src="./vendor/preloadjs-0.6.0.min.js"></script>
+
+	<!-- KoperskiGenerator CSS -->
+	<link rel="stylesheet" href="./generator.css">
+	<!-- KoperskiGenerator JavaScript -->
+	<script src="./generator.js"></script>
+</head>
+<body>
+
+	<div class="site-wrapper">
+		<div class="site-wrapper-inner">
+			<div class="cover-container">
+				<div class="masthead clearfix">
+					<div class="inner">
+						<div class="masthead-brand">
+							<h3>Koperski Logo</h3>
+						</div>
+						<nav>
+							<ul class="nav masthead-nav">
+								<li class="active"><a href="./index.html">Refresh</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="inner">
+					<h1 class="cover-heading">Generate some creative bullsh*t</h1>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label for="genText" class="col-sm-2 control-label">Align:</label>
+							<div class="col-sm-10" style="text-align: left;">
+								<label class="radio-inline">
+									<input type="radio" name="fontAlign" value="left">
+									<span class="glyphicon glyphicon-align-left"></span>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="fontAlign" value="center" checked>
+									<span class="glyphicon glyphicon-align-center"></span>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="fontAlign" value="right">
+									<span class="glyphicon glyphicon-align-right"></span>
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="genText" class="col-sm-2 control-label">Style:</label>
+							<div class="col-sm-10" style="text-align: left;">
+								<label class="radio-inline">
+									<input type="radio" name="fontStyle" value="normal">
+									<span class="glyphicon glyphicon-font"></span>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="fontStyle" value="italic" checked>
+									<span class="glyphicon glyphicon-italic"></span>
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="genText" class="col-sm-2 control-label">Text:</label>
+							<div class="col-sm-10">
+								<textarea id="genText" class="form-control" rows="12"></textarea>
+							</div>
+						</div>
+						<p class="lead">
+							<a id="previewButton" href="#preview" class="btn btn-lg btn-default" data-toggle="modal" data-target="#previewModal">Preview</a>
+							<a id="downloadButton" href="#download" class="btn btn-lg btn-default">Download</a>
+						</p>
+					</form>
+				</div>
+				<div class="mastfoot">
+					<div class="inner">
+						<p>Created by <a href="https://www.facebook.com/IdeaThenGo">IdeaThenGo</a>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="previewModal" class="modal fade">
+		<div class="modal-dialog" style="width: 840px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+					<h4 class="modal-title">Preview</h4>
+				</div>
+				<div class="modal-body">
+					<canvas id="generatorCanvas" width="800" height="600"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="preloadedImages" ></div>
+
+</body>
+</html>

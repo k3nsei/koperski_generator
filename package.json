@@ -1,0 +1,30 @@
+{
+  "name": "koperski_generator",
+  "version": "0.0.1",
+  "description": "Generate motivation images for facebook timeline",
+  "keywords": [
+    "koperski",
+    "motivation",
+    "facebook",
+    "timeline",
+    "image",
+    "generator",
+    "canvas"
+  ],
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k3nsei/koperski_generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/k3nsei/koperski_generator/issues"
+  },
+  "homepage": "https://github.com/k3nsei/koperski_generator",
+  "author": "Piotr Stępniewski <k3nsei.pl@gmail.com>",
+  "scripts": {
+    "start": "goat -e index.html"
+  },
+  "devDependencies": {
+    "goat": "^0.4.1"
+  }
+}
