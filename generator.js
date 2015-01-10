@@ -78,12 +78,6 @@ jQuery(function() {
 			text.textAlign = $("input:radio[name='fontAlign']:checked").val();
 			text.color = "#fff";
 
-			if($("input:radio[name='fontStyle']:checked").val() === 'normal') {
-				text.font = "bold 36px Lato";
-			} else if($("input:radio[name='fontStyle']:checked").val() === 'italic') {
-				text.font = "italic bold 36px Lato";
-			}
-            
             // Horizontal Line Part
             var hlG = new createjs.Graphics().beginFill("#2f2f2f").drawRect(0, 0, 760, 2);
             var hl = new createjs.Shape(hlG);
@@ -143,6 +137,11 @@ jQuery(function() {
 			}
 
 			function setText() {
+                if($("input:radio[name='fontStyle']:checked").val() === 'normal') {
+				text.font = "bold 36px Lato";
+                } else if($("input:radio[name='fontStyle']:checked").val() === 'italic') {
+                    text.font = "italic bold 36px Lato";
+                }
 				var textarea = $("#genText")[0];
 				if(!!(textarea.value)) {
 					text.text = textarea.value;
