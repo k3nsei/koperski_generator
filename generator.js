@@ -32,6 +32,10 @@ jQuery(function() {
 				id: "imgLinkInverted",
 				src: "images/link_inverted.png"
 			});
+            queue.loadFile({
+				id: "imgFacebook",
+				src: "images/facebook.png"
+			});
 	 		queue.load();
 		}
 
@@ -86,16 +90,24 @@ jQuery(function() {
             hl.x = 20;
             hl.y = text.getBounds().height + 140;
             
+            // Facebook Image Part
+            var facebookImg = new createjs.Bitmap($("#imgFacebook")[0]);
+            var facebookImgScale = 18 / facebookImg.getBounds().width;
+			facebookImg.scaleX = facebookImgScale;
+			facebookImg.scaleY = facebookImgScale;
+			facebookImg.x = 278;
+			facebookImg.y = text.getBounds().height + 152;
+            
             // Link Image Part
             var linkImg = new createjs.Bitmap($("#imgLinkInverted")[0]);
-            var linkImgScale = 18 / linkImg.getBounds().width;
+            var linkImgScale = 12 / linkImg.getBounds().width;
 			linkImg.scaleX = linkImgScale;
 			linkImg.scaleY = linkImgScale;
-			linkImg.x = 580;
-			linkImg.y = text.getBounds().height + 153;
+			linkImg.x = 586;
+			linkImg.y = text.getBounds().height + 156;
             
             // LinkText Part
-            var linkText = new createjs.Text("www.trenerkoperski.pl");
+            var linkText = new createjs.Text("www.facebook.com/trenerkoperski           www.trenerkoperski.pl");
             linkText.x = 778;
 			linkText.y = text.getBounds().height + 150;
             linkText.font = "italic bold 18px Lato";
@@ -107,6 +119,7 @@ jQuery(function() {
 			stage.addChild(logo);
 			stage.addChild(text);
             stage.addChild(hl);
+            stage.addChild(facebookImg);
             stage.addChild(linkImg);
             stage.addChild(linkText);
 			stage.update();
@@ -140,7 +153,8 @@ jQuery(function() {
             
             function setFooter() {
                 hl.y = text.getBounds().height + 140;
-                linkImg.y = text.getBounds().height + 153;
+                facebookImg.y = text.getBounds().height + 152;
+                linkImg.y = text.getBounds().height + 156;
                 linkText.y = text.getBounds().height + 150;
             }
 
